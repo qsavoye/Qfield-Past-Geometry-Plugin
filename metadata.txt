@@ -1,0 +1,7 @@
+[general]
+name=Past Geometry
+description=Past geometry in current vector layer.
+author=Quentin Savoye
+icon=icon.svg
+version=1.0
+homepage=https://github.com/qsavoye
