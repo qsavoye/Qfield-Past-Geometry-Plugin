@@ -15,7 +15,7 @@ Item {
   property var overlayFeatureFormDrawer: iface.findItemByObjectName('overlayFeatureFormDrawer')
 
   Component.onCompleted: {
-    iface.addItemToCanvasActionsToolbar(pastButton)
+    iface.findItemByObjectName('canvasMenu').addItem(pastButton)
   }
 
   MenuItem {
@@ -37,6 +37,7 @@ Item {
     let featureFromPastFeature = clipboardManager.pasteFeatureFromClipboard()
     let feature = FeatureUtils.createFeature(dashBoard.activeLayer, featureFromPastFeature.geometry)
     overlayFeatureFormDrawer.featureModel.feature = feature
+    overlayFeatureFormDrawer.featureModel.resetAttributes(true)
     overlayFeatureFormDrawer.state = 'Add'
     overlayFeatureFormDrawer.open()
   }
